@@ -1,7 +1,7 @@
 # 🔗 WebOnFly_URLShortner – Scalable URL Shortener with Redis
 
 A production‑ready **URL Shortener** built with **Node.js**, following clean architecture principles.  
-It leverages **Redis** for caching and Pub/Sub communication to achieve high performance and scalability.
+It leverages **Redis** for caching to achieve high performance and scalability.
 
 ---
 
@@ -9,14 +9,18 @@ It leverages **Redis** for caching and Pub/Sub communication to achieve high per
 
 The solution follows a layered architecture:
 
-- **Presentation Layer** (`Express API`): Handles HTTP requests and responses.
-- **Application Layer**: Contains business logic, use cases, and interfaces.
-- **Domain Layer**: Core domain models and business rules.
-- **Infrastructure Layer**: Implements external concerns like services and data access.
-- **Persistence Layer**: Database implementation (e.g., MongoDB/PostgreSQL).
-- **Caching Layer (Redis)**: Provides fast in‑memory caching and Pub/Sub messaging.
+- API Server: Handles requests for shortening and retrieving URLs.
+- Redis Caching Layer: Uses multiple Redis instances for distributed caching.
+- Docker: Simulates a distributed environment with multiple Redis containers.
 
 ---
+
+## Setting up the project
+
+- **express**: A lightweight web server framework.
+- **redis**: To handle caching.
+- **shortid**: For generating short, unique IDs.
+- **dotenv**: For managing environment variables.
 
 ## ⚡ Redis Caching
 
